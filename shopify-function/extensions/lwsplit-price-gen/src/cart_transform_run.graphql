@@ -1,0 +1,22 @@
+query CartTransformRunInput {
+  cart {
+    lwsplit: attribute(key: "_lwsplit_price") { value }
+    buyerIdentity {
+      purchasingCompany { company { id } }
+    }
+    lines {
+      id
+      quantity
+      cost { amountPerQuantity { amount currencyCode } }
+      sellingPlanAllocation { sellingPlan { id } }
+      merchandise {
+        __typename
+        ... on ProductVariant { id }
+      }
+    }
+  }
+  cartTransform {
+    prices: metafield(namespace: "lwsplit", key: "prices") { value }
+  }
+  presentmentCurrencyRate
+}

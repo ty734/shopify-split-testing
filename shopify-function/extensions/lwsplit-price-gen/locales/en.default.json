@@ -1,0 +1,4 @@
+{
+  "name": "lw-split price test",
+  "description": "Wholesale-safe D2C price test (cart-transform). Skips any B2B cart via buyerIdentity.purchasingCompany."
+}

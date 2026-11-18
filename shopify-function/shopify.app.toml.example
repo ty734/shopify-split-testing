@@ -1,0 +1,19 @@
+# Copy to shopify.app.toml. Learn more at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "YOUR_APP_CLIENT_ID"
+name = "split-price-function"
+application_url = "https://split.your-store.example.com"
+embedded = false
+
+[webhooks]
+api_version = "2026-07"
+
+[access_scopes]
+scopes = "read_cart_transforms,write_cart_transforms,read_all_cart_transforms,read_customers"
+optional_scopes = [ ]
+use_legacy_install_flow = false
+
+[auth]
+redirect_urls = [
+  "https://split.your-store.example.com/api/auth/callback"
+]
